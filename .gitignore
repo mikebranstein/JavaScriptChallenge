@@ -39,6 +39,9 @@ build/Release
 # Dist directory
 dist/
 
+# Publish to gh-pages directory
+.publish
+
 # Dependency directories
 node_modules/
 jspm_packages/
