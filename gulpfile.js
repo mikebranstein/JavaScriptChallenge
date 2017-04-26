@@ -13,6 +13,12 @@ gulp.task('browserSync', function() {
     });
 });
 
+gulp.task('build', function() {
+    runSequence(
+        'clean:dist',
+        'copy')
+});
+
 gulp.task('clean:dist', function() {
     return del.sync(['dist/**', '!dist']);
 });
@@ -38,4 +44,4 @@ gulp.task('watch', ['browserSync'], function() {
     gulp.watch('src/*.html', browserSync.reload);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['build', 'watch']);
