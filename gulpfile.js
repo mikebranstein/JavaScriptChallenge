@@ -7,8 +7,7 @@ var deploy = require('gulp-gh-pages');
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
-            baseDir: "src",
-            index: "challenge.html"
+            baseDir: "src"
         }
     });
 });
