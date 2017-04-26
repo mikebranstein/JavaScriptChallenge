@@ -1,0 +1,21 @@
+html {
+    font-size: 2em !important;
+    color: #FFF !important;
+    font-family: Arial !important;
+}
+
+body {
+    margin: 5% 20%;
+    text-align: center;
+    background-color: #1A1A1A;
+}
+
+#editor {
+    resize: none;
+    width: 50%;
+    height: 200px;
+}
+
+.header {
+    font-size: 3em;
+}

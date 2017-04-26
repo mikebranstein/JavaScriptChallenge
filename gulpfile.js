@@ -41,6 +41,7 @@ gulp.task('publish', function() {
 
 gulp.task('watch', ['browserSync'], function() {
     gulp.watch('src/*.html', browserSync.reload);
+    gulp.watch('src/css/*.css', browserSync.reload);
 });
 
 gulp.task('default', ['build', 'watch']);
