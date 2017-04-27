@@ -18,3 +18,22 @@ var x = setInterval(function() {
 function addMinutes(date, minutes) {
     return new Date(date.getTime() + minutes*60000);
 }
+
+// function testCode() {
+//     var code = document.getElementById('editor').textContent;
+//     alert(code);
+// }
+
+window.onload = function() {
+    document.getElementById("testButton").addEventListener("click", function(){
+        var code = document.getElementById("editor").value;
+        //alert(code);
+        //debugger;
+        var result = eval(code + 'challenge();');
+        var correct = (result === 53) ? "You are correct!" : "You are NOT correct...";
+        
+        alert("Result: " + result + ",    " + correct);
+
+    });
+}
+
