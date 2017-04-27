@@ -28,15 +28,14 @@ window.onload = function() {
     document.getElementById("testButton").addEventListener("click", function(){
         var code = document.getElementById("editor").value;
         
-        var firstTest = code + '\n challenge([2,3,7,1,5,6,0]);'
-        var firstTestResult = eval(code + '\n challenge([2,3,7,1,5,6,0]);');
-        var correctResult = [0,1,2,3,5,6,7];
+        var firstTestActualResult = eval(code + '\n challenge([2,3,7,1,5,6,0]);');
+        var firstTestCorrectResult = [0,1,2,3,5,6,7];
 
-        var correct = (actualResult.length == correctResult.length) && (actualResult.every(function(element,index) {
-            return element === correctResult[index];
+        var correctStatus = (firstTestActualResult.length == firstTestCorrectResult.length) && (firstTestActualResult.every(function(element,index) {
+            return element === firstTestCorrectResult[index];
         })) ? "You are correct!" : "You are NOT correct";
 
-        alert("Result: " + actualResult + ",    " + correct);
+        alert("Result: " + firstTestActualResult + ",    " + correctStatus);
 
     });
 }
