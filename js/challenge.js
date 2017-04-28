@@ -1,4 +1,4 @@
-var countDownDate = addMinutes(new Date(), .316);
+var countDownDate = addMinutes(new Date(), 2.016);
 
 var x = setInterval(function() {
     var now = new Date().getTime();
