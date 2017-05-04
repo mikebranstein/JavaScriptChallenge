@@ -4,6 +4,8 @@
     <head>
         <title>Select a Challenge!</title>
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script type="text/javascript" src="js/index.js"></script>        
+        <script type="text/javascript" src="js/scoreboard.js"></script>
     </head>
     <body>
         <h1>Welcome to the<br/><span class="header">JavaScript Challenge</span></h1>
@@ -11,8 +13,20 @@
 
         <br/>
 
-        <a href="instructions.html"><img class="challenge-image" src="images/challenge01.png" /></a>
-        <a href="instructions.html"><img class="challenge-image" src="images/challenge01.png" /></a>
-        <a href="instructions.html"><img class="challenge-image" src="images/challenge01.png" /></a>
+        <img onclick="saveSelection(this)" id="1" class="challenge-image" src="images/challenge01.png" />
+        <img onclick="saveSelection(this)" id="2" class="challenge-image" src="images/challenge01.png" />
+        <img onclick="saveSelection(this)" id="3" class="challenge-image" src="images/challenge01.png" />
+
+        <br/>
+
+        <ol id="challenge-one-scoreboard" class="scoreboard">
+            <li>No data</li>
+        </ol>
+        <ol id="challenge-two-scoreboard" class="scoreboard">
+            <li>No data</li>
+        </ol>
+        <ol id="challenge-three-scoreboard" class="scoreboard">
+            <li>No data</li>
+        </ol>
     </body>
 </html>
