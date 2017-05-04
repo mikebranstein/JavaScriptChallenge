@@ -11,6 +11,7 @@ var x = setInterval(function() {
     
     if (distance < 1000) {
         clearInterval(x);
+        saveScore();
         window.location = 'fail.html';
     }
 }, 1000);
@@ -34,9 +35,52 @@ window.onload = function() {
         
         if (result.length == correctResult.length 
         && result.every(function(element, index) { return element === correctResult[index]; })) {
+            saveScore();
             window.location = 'success.html';
         } else {
             alert('INCORRECT');
         }
     });
+}
+
+function saveScore() {
+    var name = localStorage.getItem('playerName');
+    var time = document.getElementById('timer').innerHTML;
+    var challengeNumber = localStorage.getItem('challengeNumber');
+    var challenge;
+    var scores;
+
+    switch(challengeNumber) {
+        case '1': 
+            scores = localStorage.getItem('challengeOneScores');
+            challenge = 'challengeOneScores';
+            break;
+        case '2':
+            scores = localStorage.getItem('challengeTwoScores');
+            challenge = 'challengeTwoScores';
+            break;
+        case '3':
+            scores = localStorage.getItem('challengeThreeScores');
+            challenge = 'challengeThreeScores';
+            break;
+        default:
+            return;
+    }
+
+    addRecords(scores, name, time, challenge);
+}
+
+function addRecords(scores, name, time, challenge) {
+    debugger;
+    if(scores === null || scores === 'null')
+        scores = [];
+    
+    var scoresObj = Array.isArray(scores) ? scores : JSON.parse(scores);
+
+    scoresObj.push({
+        name: name,
+        time: time
+    });
+
+    localStorage.setItem(challenge, JSON.stringify(scoresObj));
 }

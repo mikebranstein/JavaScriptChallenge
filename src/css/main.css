@@ -31,9 +31,25 @@ body {
 .challenge-image {
     width: 350px;
     border: 3px white solid;
+    margin: 15px;
+    cursor: pointer;
+}
+
+.scoreboard {
+    width: 340px;
+    display: inline-block;
+    text-align: left;
 }
 
 .button {
     width: 300px;
     height: 100px;
+}
+
+.name {
+    width: 250px;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
 }
