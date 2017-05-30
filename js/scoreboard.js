@@ -1,40 +1,23 @@
-window.onload = function() {
-    var challengeOneScores = localStorage.getItem('challengeOneScores');
-    var challengeTwoScores = localStorage.getItem('challengeTwoScores');
-    var challengeThreeScores = localStorage.getItem('challengeThreeScores');
+window.onload = function () {
 
-    var challengeOneScoreboard = document.getElementById('challenge-one-scoreboard');
-    var challengeTwoScoreboard = document.getElementById('challenge-two-scoreboard');
-    var challengeThreeScoreboard = document.getElementById('challenge-three-scoreboard');
+    loadScores(JSON.parse(localStorage.getItem('challengeOneScores')), document.getElementById('challengeOneTimes'));
+    loadScores(JSON.parse(localStorage.getItem('challengeTwoScores')), document.getElementById('challengeTwoTimes'));
+    loadScores(JSON.parse(localStorage.getItem('challengeThreeScores')), document.getElementById('challengeThreeTimes'));
 
-    if(challengeOneScores !== null) {
-        challengeOneScoreboard.innerHTML = '';
-
-        var parsedScores = JSON.parse(challengeOneScores);
-        parsedScores.forEach(function(record) {
-            challengeOneScoreboard.innerHTML += '<li>' + record.name + ': ' + record.time + '</li>';
-        })
+    function loadScores(scores, board) {
+        if (scores !== null) {
+            var arr = new Array();
+            scores.forEach(function (item) {
+                seconds = (item.time.substring(0, 1) * 60) + item.time.substring(2);
+                arr.push({ name: item.name, time: item.time, seconds: seconds });
+            }, this); 
+            arr.sort(compareInt);
+            arr.forEach(function (item) {
+                board.innerHTML += "<div class=\"row\"> <div class=\" col-md-8 col-sm-6 \" style=\"text-align:right\">" + item.name + "</div> <div class=\"col-md-4 col-sm-4\">" + item.time + "</div></div>";
+            }, this);
+        }
+        function compareInt(B, A) {
+            return parseInt(A.seconds) - parseInt(B.seconds);
+        }
     }
-
-    if(challengeTwoScores !== null) {
-        challengeTwoScoreboard.innerHTML = '';
-
-        var parsedScores = JSON.parse(challengeTwoScores);
-        parsedScores.forEach(function(record) {
-            challengeTwoScoreboard.innerHTML += '<li>' + record.name + ': ' + record.time + '</li>';
-        })
-    }
-
-    if(challengeThreeScores !== null) {
-        challengeThreeScoreboard.innerHTML = '';
-
-        var parsedScores = JSON.parse(challengeThreeScores);
-        parsedScores.forEach(function(record) {
-            challengeThreeScoreboard.innerHTML += '<li>' + record.name + ': ' + record.time + '</li>';
-        })
-    }
-
-    console.log(challengeOneScores);
-    console.log(challengeTwoScores);
-    console.log(challengeThreeScores);
 }
