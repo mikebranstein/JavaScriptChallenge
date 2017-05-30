@@ -3,21 +3,46 @@ html {
     color: #FFF !important;
     font-family: Arial !important;
 }
-
-body {
-    margin: 5% 15%;
-    text-align: center;
-    background-color: #1A1A1A;
+h1,h3,h4,h5{
+    color:#FFF !important;
 }
 
+body {
+    text-align: center !important;
+    background-color: #1A1A1A !important;
+}
+#scoreboardTitle{
+    font-size: 1.5em; 
+    color: #FFF;
+}
+#challengeOneTimes{
+    font-size: 1.5em; 
+    color: #FFF;
+}
+#challengeTwoTimes{
+    font-size: 1.5em; 
+    color: #FFF;
+}
+#challengeThreeTimes{
+    font-size: 1.5em; 
+    color: #FFF;
+}
 #editor {
     resize: none;
+    margin: 0 auto;
     width: 50%;
     height: 200px;
 }
+.warning-text {
+    margin-top:1em;
+    margin-left: 30%;
+    margin-right: 30%;
+    font-size: 1em;
+}
+
 
 .header {
-    font-size: 1.5em;
+    font-size: 1em;
     color: yellow;
 }
 
@@ -29,9 +54,9 @@ body {
 }
 
 .challenge-image {
-    width: 350px;
+    width: 190px;
     border: 3px white solid;
-    margin: 15px;
+    /*margin: 15px;*/
     cursor: pointer;
 }
 
@@ -42,14 +67,29 @@ body {
 }
 
 .button {
-    width: 300px;
-    height: 100px;
+    width: 100px;
+    height: 33px;
 }
 
 .name {
     width: 250px;
     height: 50px;
     font-size: 1em;
+    color: black;
     font-weight: bold;
     text-align: center;
+}
+
+.myGrid {
+    width: 500px;
+    height: 250px;
+  }
+.challenge-text{
+    font-size: 2em;
+    color: #FFF ;
+    font-family: Arial ;
+}
+.alert-danger{
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
 }

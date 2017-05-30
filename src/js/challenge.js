@@ -1,14 +1,13 @@
 var countDownDate = addMinutes(new Date(), 2.016);
 
-var x = setInterval(function() {
+var x = setInterval(function () {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById('timer').innerHTML = minutes + ':' + seconds.toLocaleString('en-US', { minimumIntegerDigits: 2, useGrouping: false });
 
-    document.getElementById('timer').innerHTML = minutes + ':' + seconds.toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
-    
     if (distance < 1000) {
         clearInterval(x);
         saveScore();
@@ -17,31 +16,106 @@ var x = setInterval(function() {
 }, 1000);
 
 function addMinutes(date, minutes) {
-    return new Date(date.getTime() + minutes*60000);
+    return new Date(date.getTime() + minutes * 60000);
 }
+window.onload = function () {
+    var challengeNumber = localStorage.getItem('challengeNumber');
 
-window.onload = function() {
-    document.getElementById("testButton").addEventListener("click", function(){
-        var code = document.getElementById("editor").value;
-        
-        var array = [2,3,7,1,5,6,0].toString();
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.getSession().setMode("ace/mode/javascript");
+    editor.setOptions({
+        fontSize: "14pt"
+    });
+
+
+    switch (challengeNumber) {
+        case '1':
+            challengeOne();
+            break;
+        case '2':
+            challengeTwo();
+            break;
+        case '3':
+            challengeThree();
+            break;
+        default:
+            return;
+    }
+
+}
+function challengeOne() {
+    document.getElementById("testButton").addEventListener("click", function () {
+        var code = ace.edit("editor").getValue();
+
+        var array = [2, 3, 7, 1, 5, 6, 0].toString();
         var result = eval(code + '\n challenge([' + array + ']);');
-        var correctResult = [0,1,2,3,5,6,7];
+        var correctResult = [0, 1, 2, 3, 5, 6, 7];
 
         if (!Array.isArray(result)) {
-            alert('Does not return an array!'); 
+            document.getElementById("warning").innerHTML = "Does not return an array!";
+            document.getElementById("warning").setAttribute("style", "display:visible")
+            $("#warning").fadeOut(2000);
             return;
         }
-        
-        if (result.length == correctResult.length 
-        && result.every(function(element, index) { return element === correctResult[index]; })) {
+
+        if (result.length == correctResult.length
+            && result.every(function (element, index) { return element === correctResult[index]; })) {
             saveScore();
             window.location = 'success.html';
         } else {
-            alert('INCORRECT');
+            document.getElementById("warning").innerHTML = "INCORRECT";
+            document.getElementById("warning").setAttribute("style", "display:visible")
+            $("#warning").fadeOut(2000);
         }
     });
 }
+
+function challengeTwo() {
+    var editor = ace.edit("editor");
+    editor.setOptions({
+        readOnly: true,
+        highlightActiveLine: false,
+        highlightGutterLine: false
+    });
+    document.getElementById("testButton").addEventListener("click", function () {
+        var answer = document.getElementById("answer").value;
+        if (answer == "") {
+            window.location = 'success.html';
+        } else {
+            document.getElementById("warning").setAttribute("style", "display:visible")
+            $("#warning").fadeOut(1800);
+        }
+    });
+}
+function challengeThree() {
+    document.getElementById("testButton").addEventListener("click", function () {
+        var code = ace.edit("editor").getValue();
+
+        var str = "Bacon";
+        var result = eval(code + '\n challenge(\"' + str + '\");');
+
+
+        if (!(typeof (result) === "string")) {
+            document.getElementById("warning").innerHTML = "Not of type <b>string</b>!";
+            document.getElementById("warning").setAttribute("style", "display:visible")
+            $("#warning").fadeOut(2000);
+            return;
+        }
+
+        if (result.length == str.length && result == "nocaB") {
+
+            saveScore();
+            window.location = 'success.html';
+        } else {
+            document.getElementById("warning").innerHTML = "INCORRECT";
+            document.getElementById("warning").setAttribute("style", "display:visible")
+            $("#warning").fadeOut(2000);
+        }
+    });
+}
+
+
 
 function saveScore() {
     var name = localStorage.getItem('playerName');
@@ -50,8 +124,8 @@ function saveScore() {
     var challenge;
     var scores;
 
-    switch(challengeNumber) {
-        case '1': 
+    switch (challengeNumber) {
+        case '1':
             scores = localStorage.getItem('challengeOneScores');
             challenge = 'challengeOneScores';
             break;
@@ -71,10 +145,9 @@ function saveScore() {
 }
 
 function addRecords(scores, name, time, challenge) {
-    debugger;
-    if(scores === null || scores === 'null')
+    if (scores === null || scores === 'null')
         scores = [];
-    
+
     var scoresObj = Array.isArray(scores) ? scores : JSON.parse(scores);
 
     scoresObj.push({

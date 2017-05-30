@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-
+<!--http://ui-grid.info/-->
 <html>
-    <head>
-        <title>Select a Challenge!</title>
-        <link rel="stylesheet" type="text/css" href="css/main.css">
-        <script type="text/javascript" src="js/index.js"></script>        
-        <script type="text/javascript" src="js/scoreboard.js"></script>
-    </head>
-    <body>
-        <h1>Welcome to the<br/><span class="header">JavaScript Challenge</span></h1>
-        <h3>Select your challenge.</h3>
 
-        <br/>
+<head>
+    <title>Select a Challenge!</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/scoreboard.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js></script>
+</head>
 
-        <img onclick="saveSelection(this)" id="1" class="challenge-image" src="images/challenge01.png" />
-        <img onclick="saveSelection(this)" id="2" class="challenge-image" src="images/challenge01.png" />
-        <img onclick="saveSelection(this)" id="3" class="challenge-image" src="images/challenge01.png" />
+<body>
+    <h1>Welcome to the<br/><span class="header">JavaScript Challenge</span></h1>
+    <h3>Select your challenge.</h3>
 
-        <br/>
+    <br/>
+    <div class="container">
+        <div class="col-md-4" id="challengeOneTimes">
+            <div class="row">
+                <img onclick="saveSelection(this)" id="1" class="challenge-image" src="images/JSchallenge01.png" />
+            </div>
+            <!--<div class="row" style="margin-top: 20px">
+                Challenge 1
+            </div>-->
+           <hr>
+        </div>
+        <div class="col-md-4" id="challengeTwoTimes">
+            <div class="row" >
+                <img onclick="saveSelection(this)" id="2" class="challenge-image" src="images/JSchallenge02.png" />
+            </div>
+            <!--<div class="row" style="margin-top: 20px">
+                Challenge 2
+            </div>-->
+             <hr>
+        </div>
+        <div class="col-md-4" id="challengeThreeTimes">
+            <div class="row">
+                <img onclick="saveSelection(this)" id="3" class="challenge-image" src="images/JSchallenge03.png" />
+            </div>
+            <!--<div class="row"style="margin-top: 20px">
+                Challenge 3
+            </div>-->
+             <hr>
+        </div>
+    </div>
+    </div>
+    <br/>
 
-        <ol id="challenge-one-scoreboard" class="scoreboard">
+    <div class="scoreboard container">
+    </div>
+    </div>
+    <div class="container" id="scoreboardTitle">
+    </div>
+
+    <!--<ol id="challenge-one-scoreboard" class="scoreboard">
             <li>No data</li>
         </ol>
         <ol id="challenge-two-scoreboard" class="scoreboard">
@@ -27,6 +63,8 @@
         </ol>
         <ol id="challenge-three-scoreboard" class="scoreboard">
             <li>No data</li>
-        </ol>
-    </body>
+        </ol>-->
+</body>
+
+
 </html>
