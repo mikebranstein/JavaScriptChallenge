@@ -85,7 +85,9 @@ function challengeTwo() {
         } else {
             document.getElementById("warning").setAttribute("style", "display:visible")
             $("#warning").fadeOut(1800);
+            return;
         }
+        saveScore();
     });
 }
 function challengeThree() {
