@@ -43,3 +43,8 @@ function checkName(name) {
         throw "InvalidLengthException";
     }
 }
+// function keyPress(){
+//     if(document.getElementById("name").value.length >= 23){
+//         alert("test");
+//     }
+// }
