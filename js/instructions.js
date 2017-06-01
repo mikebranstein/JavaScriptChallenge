@@ -29,11 +29,17 @@ function checkName(name) {
     if (name == "") {
         document.getElementById("warning").innerHTML = "Please enter a name.";
         document.getElementById("warning").setAttribute("style", "color: #ff3300");
-        throw "stop execution";
+        throw "MissingNameException";
     }
     if (name.includes("<") || name.includes(">")) {
-        document.getElementById("warning").innerHTML = "No tags";
+        document.getElementById("warning").innerHTML = "<No tags>";
         document.getElementById("warning").setAttribute("style", "color: #ff3300");
-        throw "stop execution";
+        throw "BadSymbolException";
+    }
+      if (name.length >= 23) {
+        document.getElementById("warning").innerHTML = "22 character limit. Your name has been trimmed.";
+        document.getElementById("warning").setAttribute("style", "color: #ff3300");
+        document.getElementById('name').value = name.substring(0,22);
+        throw "InvalidLengthException";
     }
 }
