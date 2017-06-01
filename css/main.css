@@ -96,3 +96,7 @@ body {
 .container {
     width: 90% !important;
 }
+.titles{
+ color: #ffff00;
+ font-size: 25px;
+}
