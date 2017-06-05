@@ -82,7 +82,7 @@ function challengeTwo() {
         var answer1 = document.getElementById("answer1").value.replace(/\s/g, '').toLowerCase();
         var answer2 = document.getElementById("answer2").value.replace(/\s/g, '').toLowerCase();
 
-        if (answer1 == "mynameisbob" && (answer2 == "undefinded" || answer2 == "" || answer2 == "none" || answer2 == "nothing")) {
+        if (answer1 == "mynameisbob" && (answer2 == "undefined")) {
             window.location = 'success.html';
         } else {
             document.getElementById("warning").setAttribute("style", "display:visible")
