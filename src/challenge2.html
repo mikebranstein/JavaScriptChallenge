@@ -12,23 +12,43 @@
     <script type="text/javascript" src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js></script>
 </head>
 
-<body>
+
+<body style="background-color: #105187!important">
+    
+    <div class="instructionText">
+        <div>Please determine what will be output to the console.</div>
+    </div>
     <h1>
-        <span class="header">JavaScript Challenge</span><br/>
-        <span id="timer" class="challenge-text">2:00</span>
+        <span id="timer" class="timer">3:00</span>
     </h1>
-    <div id="editor" >var helloThere = function (name) {
+    <!--var helloThere = function (name) {
     var text = 'Hello, ' + name;
     return function () {
         console.log(text);
     };
 };
 
-helloThere('John');
+helloThere('John');-->
+    <div class="editor" id="editor" >function Pet(name){
+    this.name = name;
+    var myName = function(){
+        return "My name is " + name;
+    };
+    var myFriend = function(){
+        return "My name is not " + this.name;
+    };
+    return {myName: myName, myFriend: myFriend};
+}
+
+var myPet = new Pet('Bob');
+myPet.myName();
+myPet.myFriend();
+
     </div>
     </textarea>
     <br/>
-    <div class="challenge-text">Output : <input id="answer" class="name" type="text" autocomplete="off"></div>
+    <div class="instructions challengeTwoBox">myPet.myName : <input id="answer1" class="name" type="text" autocomplete="off"></div>
+    <div class="instructions challengeTwoBox">myPet.myFriend : <input id="answer2" class="name" type="text" autocomplete="off"></div>
     <br/>
 
     <input class="button" id="testButton" type="button" value="Submit">

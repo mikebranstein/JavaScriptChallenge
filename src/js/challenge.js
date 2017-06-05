@@ -1,4 +1,4 @@
-var countDownDate = addMinutes(new Date(), 2.016);
+var countDownDate = addMinutes(new Date(), 3.016);
 
 var x = setInterval(function () {
     var now = new Date().getTime();
@@ -79,8 +79,10 @@ function challengeTwo() {
         highlightGutterLine: false
     });
     document.getElementById("testButton").addEventListener("click", function () {
-        var answer = document.getElementById("answer").value;
-        if (answer == "") {
+        var answer1 = document.getElementById("answer1").value.replace(/\s/g, '').toLowerCase();
+        var answer2 = document.getElementById("answer2").value.replace(/\s/g, '').toLowerCase();
+
+        if (answer1 == "mynameisbob" && (answer2 == "undefinded" || answer2 == "" || answer2 == "none" || answer2 == "nothing")) {
             window.location = 'success.html';
         } else {
             document.getElementById("warning").setAttribute("style", "display:visible")
@@ -90,6 +92,7 @@ function challengeTwo() {
         saveScore();
     });
 }
+
 function challengeThree() {
     document.getElementById("testButton").addEventListener("click", function () {
         var code = ace.edit("editor").getValue();
