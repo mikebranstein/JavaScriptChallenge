@@ -1,15 +1,20 @@
+/*KiZAN blue #105187*/
 html {
     font-size: 2em !important;
-    color: #FFF !important;
+    color: black !important;
     font-family: Arial !important;
 }
 h1,h3,h4,h5{
-    color:#FFF !important;
+    /*margin-top: 1em;*/
+    color:black !important;
+    font-size: 1em !important;
 }
 
-body {
+
+body { 
+    margin-top: 25px !important;
     text-align: center !important;
-    background-color: #1A1A1A !important;
+    background-color: #ffffff !important;
 }
 #scoreboardTitle{
     font-size: 1.5em; 
@@ -17,21 +22,27 @@ body {
 }
 #challengeOneTimes{
     font-size: 1.5em; 
-    color: #FFF;
+    color: black;
 }
 #challengeTwoTimes{
     font-size: 1.5em; 
-    color: #FFF;
+    color: black;
 }
 #challengeThreeTimes{
     font-size: 1.5em; 
-    color: #FFF;
+    color: black;
 }
 #editor {
     resize: none;
     margin: 0 auto;
     width: 50%;
     height: 200px;
+}
+.editor {
+    resize: none;
+    margin: 0 auto;
+    width: 50%;
+    height: 313px!important;
 }
 .warning-text {
     margin-top:1em;
@@ -42,8 +53,8 @@ body {
 
 
 .header {
-    font-size: 2.5em;
-    color: yellow;
+    font-size: 6em;
+    color: #f47d20;
 }
 
 .result-message {
@@ -99,4 +110,31 @@ body {
 .titles{
  color: #ffff00;
  font-size: 25px;
+}
+.logo{
+    margin: 0em!important;
+}
+.instructions{
+    font-size:1.5em;
+    color:#f47d20 !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.instructionText{
+    font-size:25px !important;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+.timer{
+    font-size:30px;
+    font-weight: bold;
+    color:#f47d20 !important;   
+}
+.ace_scrollbar {
+    display: none !important;
+}
+.challengeTwoBox{
+    text-align: right!important;
+    margin-right: 40%;
 }
