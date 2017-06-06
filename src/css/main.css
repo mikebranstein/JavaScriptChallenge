@@ -138,3 +138,8 @@ body {
     text-align: right!important;
     margin-right: 40%;
 }
+
+.adminPage{
+    font-size: 1.5em; 
+    color: white;
+}
