@@ -157,7 +157,9 @@ function addRecords(scores, name, time, challenge) {
 
     scoresObj.push({
         name: name,
-        time: time
+        time: time,
+        email: localStorage.getItem('playerEmail'),
+        phone: localStorage.getItem('playerPhone')
     });
 
     localStorage.setItem(challenge, JSON.stringify(scoresObj));
