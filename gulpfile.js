@@ -22,6 +22,26 @@ gulp.task('clean:dist', function() {
     return del.sync(['dist/**', '!dist']);
 });
 
+gulp.task("html", function () {
+    return gulp.src("src/*.html")
+        .pipe(gulp.dest("dist"));
+});
+
+gulp.task("css", function () {
+    return gulp.src("src/css/*.css")
+        .pipe(gulp.dest("dist/css"));
+});
+
+gulp.task("js", function () {
+    return gulp.src("src/js/*.html")
+        .pipe(gulp.dest("dist/js"));
+});
+
+gulp.task("all-watch", ["html","css","js"], function(done) {
+    browserSync.reload();
+    done();
+});
+
 gulp.task('copy', function() {
     gulp.src('./src/**/*')
         .pipe(gulp.dest('./dist'));
@@ -31,11 +51,6 @@ gulp.task('copy', function() {
         .pipe(gulp.dest("./dist/css"));
     return gulp.src('./node_modules/bootstrap/dist/js/**')
         .pipe(gulp.dest("./dist/js"));
-});
-
-gulp.task("all-watch", ["copy"], function (done) {
-    browserSync.reload();
-    done();
 });
 
 gulp.task('deploy', function() {
