@@ -49,8 +49,10 @@ gulp.task('copy', function() {
         .pipe(gulp.dest("./dist/js"));
     gulp.src('./node_modules/bootstrap/dist/css/**')
         .pipe(gulp.dest("./dist/css"));
-    return gulp.src('./node_modules/bootstrap/dist/js/**')
+    gulp.src('./node_modules/bootstrap/dist/js/**')
         .pipe(gulp.dest("./dist/js"));
+    return gulp.src('./node_modules/ace-builds/src-min/**')
+        .pipe(gulp.dest("./dist/js/ace"));
 });
 
 gulp.task('deploy', function() {
