@@ -1,12 +1,12 @@
 /*KiZAN blue #105187*/
 html {
     font-size: 2em !important;
-    color: black !important;
+    color: white !important;
     font-family: Arial !important;
 }
 h1,h3,h4,h5{
     /*margin-top: 1em;*/
-    color:black !important;
+    color:white !important;
     font-size: 1em !important;
 }
 
@@ -22,15 +22,15 @@ body {
 }
 #challengeOneTimes{
     font-size: 1.5em; 
-    color: black;
+    color: white;
 }
 #challengeTwoTimes{
     font-size: 1.5em; 
-    color: black;
+    color: white;
 }
 #challengeThreeTimes{
     font-size: 1.5em; 
-    color: black;
+    color: white;
 }
 #editor {
     resize: none;
@@ -137,4 +137,9 @@ body {
 .challengeTwoBox{
     text-align: right!important;
     margin-right: 40%;
+}
+
+.adminPage{
+    font-size: 1.5em; 
+    color: white;
 }
