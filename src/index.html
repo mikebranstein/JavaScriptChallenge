@@ -5,41 +5,55 @@
 <head>
     <title>Select a Challenge!</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/scoreboard.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js></script>
+    <script type="text/javascript" src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js></script>-->
 </head>
 
 <body style="background-color: #105187!important">
     <img src="images/KiZANLogo-WhiteandOrange.png" class="logo">
     <h6 class="logo"><br/><span class="header">JavaScript Challenge</span></h6>
- 
+
 
     <br/>
     <div class="container">
-        <div class="col-md-4" >
+        <div class="col-md-4">
             <div class="row">
-                <img onclick="saveSelection(this)" id="1" class="challenge-image" src="https://raw.githubusercontent.com/mikebranstein/JavaScriptChallenge/gh-pages/images/JSchallenge01.PNG" />
+                <a class="challenge-button" onclick="saveSelection(this)" id="3"><span class="challenge-button-text">Start: Grand Challenge</span></br></br><span class="details">String Manipulation</br>Prize: Raspberry Pi 3</span></a>
             </div>
-           <hr>
-           <div id="challengeOneTimes"></div>
+            <div class="row">
+                <div class="col-md-6 headings" >Name</div>
+                <div class="col-md-6 headings">Time Remaining</div>
+            </div>
+            <hr>
+            <div id="challengeThreeTimes"></div>
         </div>
         <div class="col-md-4">
-            <div class="row" >
-                <img onclick="saveSelection(this)" id="2" class="challenge-image" src="https://raw.githubusercontent.com/mikebranstein/JavaScriptChallenge/gh-pages/images/JSchallenge02.PNG" />
-            </div>
-             <hr>
-        <div id="challengeTwoTimes"></div>
-        </div>
-        <div class="col-md-4" >
             <div class="row">
-                <img onclick="saveSelection(this)" id="3" class="challenge-image" src="https://raw.githubusercontent.com/mikebranstein/JavaScriptChallenge/gh-pages/images/JSchallenge03.PNG" />
+                <a class="challenge-button" onclick="saveSelection(this)" id="1"><span class="challenge-button-text">Start: General Challenge</span></br></br><span class="details">Array</br>Prize: T-shirt</span></a>
             </div>
-             <hr>
-             <div id="challengeThreeTimes"></div>
+            <div class="row">
+                <div class="col-md-6 headings" >Name</div>
+                <div class="col-md-6 headings">Time Remaining</div>
+            </div>
+            <hr>
+            <div id="challengeOneTimes"></div>
         </div>
+        <div class="col-md-4">
+            <div class="row">
+                <a class="challenge-button" onclick="saveSelection(this)" id="2"><span class="challenge-button-text">Start: General Challenge</span></br></br><span class="details">Scope</br>Prize: T-shirt</span></a>
+            </div>
+            <div class="row">
+                <div class="col-md-6 headings">Name</div>
+                <div class="col-md-6 headings">Time Remaining</div>
+            </div>
+            <hr>
+            <div id="challengeTwoTimes"></div>
+        </div>
+
     </div>
     </div>
     <br/>
