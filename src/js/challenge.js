@@ -155,12 +155,23 @@ function addRecords(scores, name, time, challenge) {
 
     var scoresObj = Array.isArray(scores) ? scores : JSON.parse(scores);
 
+var test =guid();
     scoresObj.push({
         name: name,
         time: time,
         email: localStorage.getItem('playerEmail'),
-        phone: localStorage.getItem('playerPhone')
+        phone: localStorage.getItem('playerPhone'),
+        guid: guid()
     });
 
     localStorage.setItem(challenge, JSON.stringify(scoresObj));
+}
+function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+    s4() + '-' + s4() + s4() + s4();
 }

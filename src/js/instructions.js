@@ -1,4 +1,5 @@
 window.onload = function () {
+  // localStorage.clear();
     document.getElementById("goButton").addEventListener("click", function () {
         var name = document.getElementById('name').value;
         var email = document.getElementById('email').value;
