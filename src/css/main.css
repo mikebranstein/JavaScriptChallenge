@@ -187,3 +187,27 @@ a.challenge-button:hover{
     font-size: 20px !important;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 }
+
+.timeRemaining{
+    text-align: right !important;
+    white-space: nowrap;
+    margin-top: 10px;
+    overflow: hidden;
+    color: white;
+    font-size: 20px !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.adminValues{
+    font-size: 1.5em; 
+    color: white;
+}
+
+.adminHeadings{
+    white-space: nowrap;
+    margin-top: 10px;
+    overflow: hidden;
+    color: white;
+    font-size: 20px !important;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}

@@ -15,9 +15,12 @@ window.onload = function () {
             throw "MissingPhoneNumberException";
         }
 
+        var newPhone = phone.replace("[^\\d.]", "")
+        newPhone = newPhone.substring(0,3) + "-" + newPhone.substring(3,6) + "-" + newPhone.substring(6); 
+
         localStorage.setItem('playerName', name);
         localStorage.setItem('playerEmail', email);
-        localStorage.setItem('playerPhone', phone);
+        localStorage.setItem('playerPhone', newPhone);
 
         var challengeNumber = localStorage.getItem('challengeNumber');
 
